@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialShowCart = {
-     showCart: true,
+     showCart: false,
 }
 
 const showCartSlice = createSlice({
