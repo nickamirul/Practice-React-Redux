@@ -1,16 +1,11 @@
-import { useSelector } from 'react-redux';
-
 import Card from '../UI/Card';
 import classes from './Cart.module.css';
 import CartItem from './CartItem';
 
 const Cart = (props) => {
-  const show = useSelector(state => state.showCart.showCart)
 
 
   return (
-    <>
-      {show &&
         <Card className={classes.cart}>
           <h2>Your Shopping Cart</h2>
           <ul>
@@ -19,8 +14,6 @@ const Cart = (props) => {
             />
           </ul>
         </Card>
-      }
-    </>
   );
 };
 
