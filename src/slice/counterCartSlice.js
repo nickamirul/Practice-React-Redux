@@ -13,6 +13,10 @@ const counterCartSlice = createSlice({
         },
         decreaseCart(state){
             state.counterCart--;
+
+            if(state.counterCart < 0){
+                state.counterCart = 0;
+            }
         }
     }
 })
