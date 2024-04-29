@@ -1,13 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialShowCart = {
-     isShowCart: true,
+     showCart: true,
 }
 
 const showCartSlice = createSlice({
     name: "showCartSlice",
     initialState: initialShowCart,
     reducers:{
+        click(state){
+            state.showCart = !state.showCart;
+        }
 
     }
 })
