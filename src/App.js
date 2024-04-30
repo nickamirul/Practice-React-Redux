@@ -6,7 +6,10 @@ import Products from './components/Shop/Products';
 import { useEffect } from 'react';
 import { showCartSliceAction } from './slice/showCartSlice';
 import Notification from './components/UI/Notification';
-import { sendCartData } from './slice/cart-slice';
+import { fetchCartData, sendCartData } from './slice/cart-action';
+
+//change directory because separate file 
+// import { sendCartData } from './slice/cart-slice';
 
 let isInitial = true;
 
@@ -16,6 +19,10 @@ function App() {
   const showCart = useSelector((state) => state.showCart.showCart);
   const cart = useSelector((state) => state.cart);
   const notification = useSelector((state => state.showCart.notification))
+
+  useEffect(() => {
+    dispatch(fetchCartData());
+  },[dispatch]);
 
   useEffect(() => {
 
