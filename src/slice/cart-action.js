@@ -38,7 +38,7 @@ export const sendCartData = (cart) => {
         }));
 
         const sendRequest = async () => {
-            const response = await fetch('https://redux-practice-6b085-default-rtdb.firebaseio.com/cart.json', { method: 'PUT', body: JSON.stringify(cart) });
+            const response = await fetch('https://redux-practice-6b085-default-rtdb.firebaseio.com/cart.json', { method: 'PUT', body: JSON.stringify({ items: cart.items, totalQuantity: cart.totalQuantity }) });
 
             if (!response.ok) {
                 throw new Error('Sending cart data failed.');
